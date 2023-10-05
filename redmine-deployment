@@ -37,15 +37,3 @@ spec:
                 secretKeyRef:
                   name: redmine-secret
                   key: secret-key
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: redmine-service
-spec:
-  selector:
-    app: redmine
-  ports:
-    - protocol: TCP
-      port: 3000
-      targetPort: 3000
