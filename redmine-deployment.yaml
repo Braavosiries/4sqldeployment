@@ -21,19 +21,17 @@ spec:
             - name: REDMINE_DB_POSTGRES
               value: database
             - name: REDMINE_DB_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-secret
-                  key: username
+              value: testuser
             - name: REDMINE_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
+                  name: redmine-secret
                   key: password
             - name: REDMINE_DB_DATABASE
-              value: database
+              value: testdatabase
             - name: REDMINE_SECRET_KEY_BASE
               valueFrom:
                 secretKeyRef:
                   name: redmine-secret
                   key: secret-key
+        
